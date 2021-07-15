@@ -1,19 +1,19 @@
 import { useState, useEffect } from 'react';
 import dayjs from 'dayjs';
 
-function Weather() {
+function Weather({city_name}) {
 
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
 
         useEffect(()=>{
-            fetch(`${process.env.REACT_APP_OW_API_URL}/weather/?q=Tokyo&APPID=${process.env.REACT_APP_OW_API_KEY}&units=metric`)
+            fetch(`${process.env.REACT_APP_OW_API_URL}/weather/?q=${city_name}&APPID=${process.env.REACT_APP_OW_API_KEY}&units=metric`)
             .then(res => res.json())
             .then(result =>
                 {   setData(result);
                     setLoading(false);
                 });
-        },[]);
+        },[city_name]);
 
         if (loading) {
             return <div>
