@@ -35,7 +35,7 @@ function Weather({city_name,color_name}) {
                     <div>
                     <p className="font-light">City Name</p>
                     <p className="text-lg font-medium tracking-widest">
-                        { data.name}
+                        {data.name}
                     </p>
                     </div>
                     <div>
@@ -61,7 +61,7 @@ function Weather({city_name,color_name}) {
                     </div>
                     <div>
                         <p className="font-light text-xs">
-                        Temprature
+                        Temperature
                         </p>
                         <p className="font-bold tracking-more-wider text-sm">
                         {data.main.temp}°C
